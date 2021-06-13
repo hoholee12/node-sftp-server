@@ -295,7 +295,7 @@ var SFTPSession = (function(superClass) {
     if (EventEmitter.listenerCount(this, "stat")) {
       return this.emit("stat", path, kind, new Statter(this.sftpStream, reqid));
     } else {
-      console.log("WARNING: No stat function for " + kind + ", all files exist!");
+      
       return this.sftpStream.attrs(reqid, {
         filename: path,
         longname: path,
