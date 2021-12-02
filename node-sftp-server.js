@@ -126,7 +126,7 @@ var SFTPServer = (function(superClass) {
 
   function SFTPServer(options) {
     // Expose options for the other classes to read.
-    if (!options) options = { privateKeyFile: 'ssh_host_rsa_key' };
+    if (!options) options = { privateKeyFile: '/etc/ssh/ssh_host_rsa_key' };
     if (typeof options === 'string') options = { privateKeyFile: options }; // Original constructor had just a privateKey string, so this preserves backwards compatibility.
     if (options.debug) {
       debug = function(msg) { console.log(msg); };
